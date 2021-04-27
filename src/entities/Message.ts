@@ -12,14 +12,14 @@ class Message {
   admin_id: string;
 
   @Column()
-  text: string;
+  user_id: string;
 
   @JoinColumn({ name: "user_id" })
   @ManyToOne(() => User)
   user: User
 
   @Column()
-  user_id: string;
+  text: string;
 
   @CreateDateColumn()
   created_at: Date;

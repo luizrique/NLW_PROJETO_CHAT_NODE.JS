@@ -1,4 +1,4 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class CreateSettings1618932073460 implements MigrationInterface {
 
@@ -8,33 +8,33 @@ export class CreateSettings1618932073460 implements MigrationInterface {
                 name: "settings",
                 columns: [
                     {
-                    name: "id",
-                    type: "uuid",
-                    isPrimary: true
-                }, 
-                {
-                    name: "username",
-                    type: "varchar"
-                },
-                {
-                    name: "chat",
-                    type: "boolean",
-                    default: true
-                },
-                {
-                    name: "update_at",
-                    type: "timestamp",
-                    default: "now()"
-                },
-                {
-                    name: "created_at",
-                    type: "timestamp",
-                    default: "now()",
-                },
-            ],
-        })
-    );
-}
+                        name: "id",
+                        type: "uuid",
+                        isPrimary: true
+                    },
+                    {
+                        name: "username",
+                        type: "varchar"
+                    },
+                    {
+                        name: "chat",
+                        type: "boolean",
+                        default: true
+                    },
+                    {
+                        name: "created_at",
+                        type: "timestamp",
+                        default: "now()"
+                    },
+                    {
+                        name: "update_at",
+                        type: "timestamp",
+                        default: "now()",
+                    },
+                ],
+            })
+        );
+    }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropTable("settings")

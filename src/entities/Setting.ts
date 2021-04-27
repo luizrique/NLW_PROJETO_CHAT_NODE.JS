@@ -5,14 +5,18 @@ import { v4 as uuid } from "uuid"
 class Setting {
   @PrimaryColumn()
   id: string;
+
   @Column()
   username: string;
+
   @Column()
   chat: boolean;
-  @UpdateDateColumn()
-  update_at: Date;
+
   @CreateDateColumn()
   created_at: Date;
+
+  @UpdateDateColumn()
+  update_at: Date;
 
   constructor() {
     if (!this.id) {
